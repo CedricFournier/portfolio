@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../src/assets/style/main.scss';
 import App from './App';
+import { UserContextProvider } from './context/userContext';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <UserContextProvider>
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
+      </UserContextProvider>
       </BrowserRouter>
   </React.StrictMode>
 );
