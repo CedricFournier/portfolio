@@ -13,7 +13,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path='/Signin' element={<Signin />} />
         <Route element={<RequireAuth />}>
-          <Route path='/User' element={<Admin />} />
+          <Route path='/admin' element={<Admin />} />
         </Route>
       </Route>
     </Routes>

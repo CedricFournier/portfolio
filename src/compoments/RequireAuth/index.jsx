@@ -5,9 +5,10 @@ import { UserContext } from "../../context/userContext";
 const RequireAuth = () => {
     
     const location = useLocation();
-    const {currentUser} = useContext(UserContext)
+    const {user} = useContext(UserContext)
+    
     return (
-        (currentUser
+        (user
             ? <Outlet />
             : <Navigate to="/Signin" state={{ from: location }} replace />)
     )

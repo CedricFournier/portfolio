@@ -30,14 +30,8 @@ function Signin() {
                 <i className="fa fa-user-circle sign-in-icon"></i>
                 <h1>Sign In</h1>
                 <form ref={form} onSubmit={e => handleForm(e)}>
-                    <Field type={FIELD_TYPES.INPUT_MAIL} content="Username" id="username" defaultValue={"useremail"}  />
-                    <Field type={FIELD_TYPES.INPUT_PASSWORD} content="Password" id="password" defaultValue={"userpswd"}  />
-                    <div className="input-remember">
-                        <label>
-                            <input type="checkbox" id="remember-me" />
-                            Remember me
-                        </label>
-                    </div>
+                    <Field type={FIELD_TYPES.INPUT_MAIL} content="Username" id="username" />
+                    <Field type={FIELD_TYPES.INPUT_PASSWORD} content="Password" id="password" />
                     {!validation ? 
                         <p id="errlogin">Erreur dans l’identifiant ou le mot de passe</p>
                         : 

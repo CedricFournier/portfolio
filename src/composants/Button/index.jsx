@@ -9,7 +9,7 @@ function Button(props) {
     switch (props.type) {
         case BUTTON_TYPES.DEFAULT:
           return (
-            <button className={props.class} onClick={props.click}>{props.content}</button>
+            <button className={props.class} id={props.id} onClick={props.click}>{props.content}</button>
           );
         case BUTTON_TYPES.SUBMIT:
           return (
