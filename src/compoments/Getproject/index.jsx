@@ -20,7 +20,7 @@ function Getproject() {
       <div className="div-getproject">
         {list.map((item, index) => (
             <div key={index} className="" >
-              <p>{item.id}</p>
+              <img className="imgproject" src={item.data.urlimg} alt={item.data.title}/>
               <p>{item.data.url}</p>
               <p>{item.data.title}</p>
               <Button type={BUTTON_TYPES.DEFAULT} 

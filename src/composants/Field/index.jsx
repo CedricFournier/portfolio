@@ -1,7 +1,8 @@
 export const FIELD_TYPES = {
     INPUT_TEXT: 1,  
     INPUT_MAIL: 2,
-    INPUT_PASSWORD: 3
+    INPUT_PASSWORD: 3,
+    INPUT_FILE: 4
 };
 
 function Field(props) {
@@ -40,6 +41,16 @@ function Field(props) {
                 />
             );
             break;
+        case FIELD_TYPES.INPUT_FILE:
+            component = (
+                <input
+                type="file"
+                id={props.id}
+                onChange={props.onChange}
+                required
+                />
+            );
+            break;   
         default:
             component = (
                 <input
