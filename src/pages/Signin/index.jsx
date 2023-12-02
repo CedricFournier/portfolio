@@ -1,8 +1,9 @@
+
+import { LockOutlined } from "@mui/icons-material";
+import { Alert, Avatar, Box, Button, Container, TextField, Typography } from "@mui/material";
 import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
-import Button, { BUTTON_TYPES } from "../../composants/Button"
-import Field, { FIELD_TYPES } from "../../composants/Field";
 
 function Signin() {
     const form = useRef();
@@ -15,7 +16,7 @@ function Signin() {
         try {
             await signIn(
               form.current[0].value,
-              form.current[1].value
+              form.current[2].value
             );
             setValidation(false)
             navigate("/admin");
@@ -25,22 +26,58 @@ function Signin() {
     }
 
     return (
-        <main className="main bg-dark">
-            <section className="sign-in-content">
-                <i className="fa fa-user-circle sign-in-icon"></i>
-                <h1>Sign In</h1>
-                <form ref={form} onSubmit={e => handleForm(e)}>
-                    <Field type={FIELD_TYPES.INPUT_MAIL} content="Username" id="username" />
-                    <Field type={FIELD_TYPES.INPUT_PASSWORD} content="Password" id="password" />
-                    {!validation ? 
-                        <p id="errlogin">Erreur dans l’identifiant ou le mot de passe</p>
+        <Container component="main" maxWidth="xs">
+            <Box
+                sx={{
+                    marginTop: 8,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                }}
+            >
+                <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                    <LockOutlined />
+                </Avatar>
+                <Typography component="h2" variant="h5">
+                    Sign in
+                </Typography>
+                <Box component="form" ref={form} onSubmit={handleForm} noValidate sx={{ mt: 1 }}>
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        id="email"
+                        label="Email Address"
+                        name="email"
+                        autoComplete="email"
+                        autoFocus
+                    />
+                    <TextField
+                        margin="normal"
+                        required
+                        fullWidth
+                        name="password"
+                        label="Password"
+                        type="password"
+                        id="password"
+                        autoComplete="current-password"
+                    />
+                    {validation ? 
+                        <Alert severity="error">Erreur dans l’identifiant ou le mot de passe</Alert>
                         : 
                         null
                     }
-                    <Button type={BUTTON_TYPES.SUBMIT} class="button sign-in-button" content="Sign in"/>
-                </form>
-            </section>
-        </main>
+                    <Button
+                        type="submit"
+                        fullWidth
+                        variant="contained"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        Sign In
+                    </Button>
+                </Box>
+            </Box>
+        </Container>
     )
   }
   

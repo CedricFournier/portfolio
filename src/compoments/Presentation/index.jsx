@@ -1,8 +1,14 @@
+import { Typography } from "@mui/material"
+
 function Presentation() {
     return (
       <section>
-        <h2>Bonjour, je suis Cédric Fournier</h2>
-        <h3>Développeur Frontend React</h3>
+        <Typography variant="h3" component="h2">
+          Bonjour, je suis Cédric Fournier
+        </Typography>
+        <Typography variant="h4" component="h3">
+        Développeur Frontend React
+        </Typography>
         <p>cedricfournier@gmail.com</p>
       </section>
     )

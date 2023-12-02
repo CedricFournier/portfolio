@@ -1,18 +1,23 @@
-import { useContext } from "react";
-import { UserContext } from "../../context/userContext";
+import { Box } from "@mui/material";
 
 function Project() {
-  const {list} = useContext(UserContext);
+  
 
     return (
       <section>
-        <h2>Mes projets</h2>
-        {list.map((item, index) => (
-            <div key={index}>
-              <img className='imgproject' src={item.data.urlimg} alt={item.data.title} />
-              <h3>{item.data.title}</h3>
-            </div>
-        ))}
+        <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+         <Box component={'img'} src="" alt={'mockup'}/>
+         <h1 style={{fontSize: '2rem'}}>titre</h1>
+         <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}
+              alignItems={'center'} fontSize={'1.5rem'} py={'2rem'}>
+            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
+               test
+            </Box>
+            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
+               test
+            </Box>
+         </Box>
+      </Box>
       </section>
     )
   }
