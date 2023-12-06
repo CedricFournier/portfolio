@@ -1,8 +1,16 @@
+import { Box } from "@mui/material"
+
 function Footer() {
     return (
-      <footer>
-        footer
-      </footer>
+      <Box 
+        component={'footer'} 
+        height={'100px'} 
+        display={'flex'} 
+        justifyContent={'center'}
+        alignItems={'center'}
+        >
+        <p>Portfolio created with React, Material UI and Firebase</p>
+      </Box>
     )
   }
   

@@ -1,4 +1,4 @@
-import { CloudUpload, Handshake } from "@mui/icons-material";
+import { CloudUpload } from "@mui/icons-material";
 import { Button, styled, TextField } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
 import { collection, addDoc } from "firebase/firestore";
@@ -17,6 +17,8 @@ const VisuallyHiddenInput = styled('input')({
   whiteSpace: 'nowrap',
   width: 1,
 });
+
+
 
 function Postproject() {
   const form = useRef();
@@ -44,6 +46,7 @@ function Postproject() {
         urlgit: form.current[4].value,
         urlimg: urlimg
       });
+      setImageUpload(null)
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -51,8 +54,8 @@ function Postproject() {
   }
 
     return (
-      <Grid container spacing={2}>
-        <Grid xs={8}>
+      <Grid container spacing={4}>
+        <Grid xs={7}>
           <form ref={form} onSubmit={e => handleForm(e)}>
             <TextField
               margin="normal"
@@ -106,7 +109,7 @@ function Postproject() {
             </Button>
           </form>
         </Grid>
-        <Grid xs={4}>
+        <Grid xs={5}>
           {imageUpload && (
             <img className="preview" src={URL.createObjectURL(imageUpload)}  alt="Preview" />
           )}

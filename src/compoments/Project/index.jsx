@@ -1,25 +1,37 @@
-import { Box } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
+import { useContext } from "react";
+import ItemProject from "../../composants/ItemProject";
+import { UserContext } from "../../context/userContext";
 
 function Project() {
-  
+   const {list} = useContext(UserContext);
 
     return (
-      <section>
-        <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-         <Box component={'img'} src="" alt={'mockup'}/>
-         <h1 style={{fontSize: '2rem'}}>titre</h1>
-         <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}
-              alignItems={'center'} fontSize={'1.5rem'} py={'2rem'}>
-            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
-               test
-            </Box>
-            <Box p={1} border={'2px solid black'} borderRadius={'25px'}>
-               test
-            </Box>
-         </Box>
+      <Box 
+         component={'section'} 
+         sx={{ display: 'flex', 
+               flexDirection: 'column', 
+               alignItems: 'center', 
+               marginBottom: '50px', 
+               background: 'green' }}>
+        <Typography variant="h3" component="h2" margin={'50px'}>
+         Mes projets
+        </Typography>
+        <Grid container sx={{columnGap: 10, mt: 4, justifyContent: 'center' }}>
+         {list.map((item, index) => (
+            <Grid key={index} item xs={12} md={5}>
+               <ItemProject 
+                  title={item.data.title} 
+                  src={item.data.urlimg} 
+                  alt={item.data.title}
+                  url={item.data.url}
+                  urlgit={item.data.urlgit}
+                  />
+            </Grid>
+            ))}
+         </Grid>
       </Box>
-      </section>
     )
-  }
+}
   
-  export default Project
+export default Project

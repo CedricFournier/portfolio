@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { doc, deleteDoc } from "firebase/firestore";
 import { UserContext } from "../../context/userContext";
 import { db } from "../../firebase.config";
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, Link, Stack, Typography } from "@mui/material";
 
 function Getproject() {
     const {list} = useContext(UserContext);
@@ -17,24 +17,41 @@ function Getproject() {
     };
 
     return (
-      <Grid container sx={{columnGap: 10}}>
+      <Grid container sx={{columnGap: 10, mt: 4, justifyContent: 'center' }}>
         {list.map((item, index) => (
-            <Grid key={index} xs={3}>
-              <p>{item.data.title}</p>
-              <img className="imgproject" src={item.data.urlimg} alt={item.data.title}/>
-              <p>{item.data.url}</p>
-              <p>{item.data.urlgit}</p>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                onClick={deletedata}
-                sx={{ mt: 3, mb: 2 }}
+          <Grid key={index}item xs={5}>
+            <Typography variant="h5" component="h3" my={2}>
+              {item.data.title}
+            </Typography>
+            <img className="imgproject" src={item.data.urlimg} alt={item.data.title}/>
+            <Stack spacing={2}>
+              <Link 
+                href={item.data.url} 
+                underline="none"
+                color="inherit"
+              >
+                {item.data.url}
+              </Link>
+              <Link 
+                href={item.data.urlgit} 
+                underline="none" 
+                color="inherit"
+              >
+                  {item.data.urlgit}
+              </Link>
+            </Stack>  
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              id={item.id}
+              onClick={deletedata}
+              sx={{ mt: 3, mb: 2 }}
             >
-                Suprimer
+              Suprimer
             </Button>
-            </Grid>
-            ))}
+          </Grid>
+          ))}
       </Grid>
     )
   }
