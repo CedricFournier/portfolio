@@ -8,6 +8,7 @@ function Footer() {
         display={'flex'} 
         justifyContent={'center'}
         alignItems={'center'}
+        bgcolor={'white'}
         >
         <p>Portfolio created with React, Material UI and Firebase</p>
       </Box>

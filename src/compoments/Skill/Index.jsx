@@ -10,7 +10,7 @@ function Skill() {
     return (
       <Box 
         component={'section'}
-        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'yellow' }}
+        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#EFF1DB' }}
         >
         <Typography variant="h3" component="h2" marginTop={5}>
         Mes compétences

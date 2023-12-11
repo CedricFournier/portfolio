@@ -7,17 +7,19 @@ function ItemProject(props) {
                        justifyContent: 'center',
                        alignItems: 'center', 
                        marginBottom: '40px',
-                       background: 'red'}}>
-            <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold', margin: '15px' }}>
+                       p: 5,
+                       boxShadow: 3,
+                       background: '#F9F1F0' }}>
+            <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold', marginBottom: '15px' }}>
                 {props.title}
             </Typography>
-            <Box component={'img'} sx={{ width: '500px', border: '3px solid' }} src={props.src} alt={props.alt}/>
+            <Box component={'img'} sx={{ width: '100%', border: '3px solid' }} src={props.src} alt={props.alt}/>
             <Box className={'portfolio'} display={'flex'} flexDirection={'column'} gap={'0.5rem'}
-                alignItems={'center'} fontSize={'1.5rem'} py={'2rem'}>
-                <Button variant="contained" sx={{ width: 300}} href={props.url}>
+                alignItems={'center'} fontSize={'1.5rem'} pt={'2rem'}>
+                <Button variant="contained" sx={{ width: 300, borderRadius: '16px', background: '#D3B5E5', color: 'black' }} href={props.url}>
                     Live Demo
                 </Button>
-                <Button variant="contained" sx={{ width: 300}} href={props.urlgit}>
+                <Button variant="contained" sx={{ width: 300, borderRadius: '16px', background: '#D3B5E5', color: 'black' }} href={props.urlgit}>
                     Repo Github
                 </Button>
             </Box>

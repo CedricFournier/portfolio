@@ -12,8 +12,8 @@ function Project() {
          sx={{ display: 'flex', 
                flexDirection: 'column', 
                alignItems: 'center', 
-               marginBottom: '50px', 
-               background: 'green' }}>
+               marginBottom: '50px',
+               background: 'white' }}>
         <Typography variant="h3" component="h2" margin={'50px'}>
          Mes projets
         </Typography>
