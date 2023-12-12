@@ -6,11 +6,13 @@ import { Button, Grid, Link, Stack, Typography } from "@mui/material";
 
 function Getproject() {
     const {list} = useContext(UserContext);
+    const {data} = useContext(UserContext);
     
     const deletedata = async (e) => {
       e.preventDefault();
       try {
         await deleteDoc(doc(db, "projets", e.target.id));
+        data();
       } catch (e) {
         console.error("Error delete document: ", e);
       }

@@ -35,13 +35,12 @@ const data = async () => {
   };   
 }
 
-
 useEffect(() => {
   data();
 }, [])
 
   return (
-    <UserContext.Provider value={{user, list, signIn}}>
+    <UserContext.Provider value={{user, list, signIn, data}}>
       {!loadingData && props.children}
     </UserContext.Provider>
   )
