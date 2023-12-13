@@ -28,7 +28,7 @@ function Project() {
                   urlgit={item.data.urlgit}
                   />
             </Grid>
-            ))}
+         ))}
          </Grid>
       </Box>
     )
