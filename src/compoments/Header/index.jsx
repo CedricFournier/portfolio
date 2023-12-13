@@ -22,7 +22,7 @@ function Header() {
       <Box component={'header'} maxWidth='xl'  sx={{ margin: 'auto', padding: '20px 30px' }}>
         <Box component={'nav'} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>             
             <Link component={RouterLink} underline="none" color="inherit" to="/">
-              <Typography fontSize={{ xs: "20px", md: "3rem" }} component="h1">
+              <Typography fontSize={{ xs: "20px", md: "35px" }} component="h1">
                 Fournier Cédric
               </Typography> 
             </Link>
