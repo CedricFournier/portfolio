@@ -5,7 +5,7 @@ import Skill from "../../compoments/Skill/Index"
 
 function Home() {
     return (
-      <Box component={'main'} maxWidth='xl' margin={'0 auto'}>
+      <Box component={'main'} margin={'0 auto'}>
         <Presentation />
         <Skill />
         <Project />

@@ -19,25 +19,25 @@ function Header() {
     }
 
     return (
-      <Box component={'header'} maxWidth='xl'  sx={{ margin: 'auto', padding: '20px' }}>
+      <Box component={'header'} maxWidth='xl'  sx={{ margin: 'auto', padding: '20px 30px' }}>
         <Box component={'nav'} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>             
             <Link component={RouterLink} underline="none" color="inherit" to="/">
-              <Typography variant="h4" component="h1">
+              <Typography fontSize={{ xs: "20px", md: "3rem" }} component="h1">
                 Fournier Cédric
               </Typography> 
             </Link>
             <div>
             {user ?
                 <div>
-                    <Link component={RouterLink} underline="none" fontSize='20px' color="inherit" marginRight="20px" to="/admin">
+                    <Link component={RouterLink} underline="none" fontSize={{ xs: "15px", md: "20px" }} color="inherit" marginRight={{ xs: "10px", md: "20px" }} to="/admin">
                         Admin
                     </Link>
-                    <Link component={RouterLink} underline="none" fontSize='20px' color="inherit" onClick={logOut} to="/">
+                    <Link component={RouterLink} underline="none" fontSize={{ xs: "15px", md: "20px" }} color="inherit" onClick={logOut} to="/">
                         Sign Out                    
                     </Link>
                 </div> 
                 :
-                <Link component={RouterLink} underline="none" fontSize='20px' color="inherit" to="/Signin">
+                <Link component={RouterLink} underline="none" fontSize={{ xs: "15px", md: "20px" }} color="inherit" to="/Signin">
                   Sign in
                 </Link> 
             }

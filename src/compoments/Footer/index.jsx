@@ -9,6 +9,7 @@ function Footer() {
         justifyContent={'center'}
         alignItems={'center'}
         bgcolor={'white'}
+        textAlign={'center'}
         >
         <p>Portfolio created with React, Material UI and Firebase</p>
       </Box>

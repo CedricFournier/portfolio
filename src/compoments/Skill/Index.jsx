@@ -10,13 +10,13 @@ function Skill() {
     return (
       <Box 
         component={'section'}
-        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#EFF1DB' }}
+        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', background: '#F7C9B6' }}
         >
         <Typography variant="h3" component="h2" marginTop={5}>
         Mes compétences
         </Typography>
         <Box minHeight={'calc(50vh - 175px)'} sx={{ display: 'flex', alignItems: 'center' }}>
-          <Stack direction="row" spacing={10}>
+          <Stack direction="column" spacing={1}>
             <img className='logoskill' src={logohtml} alt="logo de HTML" />
             <img className='logoskill' src={logocss} alt="logo de CSS" />
             <img className='logoskill' src={logojavascript} alt="logo de Javascript" />

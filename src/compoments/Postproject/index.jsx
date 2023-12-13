@@ -3,7 +3,8 @@ import { Button, styled, TextField } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
 import { collection, addDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { UserContext } from "../../context/userContext";
 import { db, storage } from "../../firebase.config";
 
 const VisuallyHiddenInput = styled('input')({
@@ -18,11 +19,10 @@ const VisuallyHiddenInput = styled('input')({
   width: 1,
 });
 
-
-
 function Postproject() {
   const form = useRef();
   const [imageUpload, setImageUpload] = useState(null);
+  const {data} = useContext(UserContext);
   
   const handleForm = async (e) => {
     e.preventDefault();
@@ -47,6 +47,7 @@ function Postproject() {
         urlimg: urlimg
       });
       setImageUpload(null)
+      data()
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
