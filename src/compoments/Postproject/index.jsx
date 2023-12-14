@@ -1,5 +1,5 @@
 import { CloudUpload } from "@mui/icons-material";
-import { Button, styled, TextField } from "@mui/material";
+import { Button, Checkbox, FormControlLabel, styled, TextField } from "@mui/material";
 import Grid from '@mui/material/Unstable_Grid2';
 import { collection, addDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
@@ -44,7 +44,14 @@ function Postproject() {
         title: title,
         url: form.current[2].value,
         urlgit: form.current[4].value,
-        urlimg: urlimg
+        urlimg: urlimg,
+        description: form.current[6].value,
+        lhtml: form.current[9].checked,
+        lcss: form.current[10].checked,
+        ljavascript: form.current[11].checked,
+        lreact: form.current[12].checked,
+        lfirebase: form.current[13].checked,
+        lmongodb: form.current[14].checked
       });
       setImageUpload(null)
       data()
@@ -88,6 +95,23 @@ function Postproject() {
                 autoComplete="urlgit"
                 autoFocus
             />
+            <TextField
+                margin="normal"
+                required
+                multiline
+                fullWidth
+                id="description"
+                label="Description"
+                name="Description"
+                autoComplete="Description"
+                autoFocus
+            />
+              <FormControlLabel control={<Checkbox />} id="htmlc" label="HTML" />
+              <FormControlLabel control={<Checkbox />} id="cssc" label="CSS" />
+              <FormControlLabel control={<Checkbox />} id="javascriptc" label="Javascript" />
+              <FormControlLabel control={<Checkbox />} id="reactc" label="React" />
+              <FormControlLabel control={<Checkbox />} id="firebasec" label="Firebase" />
+              <FormControlLabel control={<Checkbox />} id="mongodbc" label="Mongodb" />
             <Button 
             component="label" 
             variant="contained" 

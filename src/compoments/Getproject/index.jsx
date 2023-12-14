@@ -24,11 +24,12 @@ function Getproject() {
         {list.map((item, index) => (
             <Grid key={index} item xs={12} md={5}>
                <ItemProject 
-                  title={item.data.title} 
-                  src={item.data.urlimg} 
-                  alt={item.data.title}
-                  url={item.data.url}
-                  urlgit={item.data.urlgit}
+                  title={item.info.title} 
+                  src={item.info.urlimg} 
+                  alt={item.info.title}
+                  url={item.info.url}
+                  urlgit={item.info.urlgit}
+                  md={12}
               />
               <Button
               type="submit"

@@ -10,7 +10,7 @@ export function UserContextProvider(props) {
   const [loadingData, setLoadingData] = useState(true);
   const [list, setList] = useState([]);
   const signIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
-
+  
 useEffect(() => {
   const loguser = onAuthStateChanged(auth, (user) => {
     setCurrentUser(user)
@@ -25,8 +25,8 @@ const data = async () => {
       const querySnapshot = await getDocs(collection(db, "projets"));
       querySnapshot.forEach((doc) => {
       const id = doc.id
-      const data = doc.data()
-      const object = {id: id, data}
+      const info = doc.data()
+      const object = {id: id, info}
       item.push(object);
       setList(item)
       });

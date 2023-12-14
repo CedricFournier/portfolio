@@ -21,7 +21,7 @@ function Presentation() {
           <Typography fontSize={{ xs: "1rem", sm: '25px', md: "30px", lg: '35px' }} component="h3" margin={{ xs: "10px" }}>
           Développeur Frontend React
           </Typography>
-          <a href="mailto:cedricfournier@gmail.com">cedricfournier@gmail.com</a>
+          <a href="mailto:cedricfournierwebdeveloper@gmail.com">cedricfournierwebdeveloper@gmail.com</a>
         </Box>
         <Box component={'img'} height={{ xs: '300px', sm: '400px',  md: '500px', lg: '600px' }} src={imgdev} alt="Dessin d'un développeur"/>
       </Box>

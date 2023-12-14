@@ -19,29 +19,57 @@ function Header() {
     }
 
     return (
-      <Box component={'header'} maxWidth='xl'  sx={{ margin: 'auto', padding: '20px 30px' }}>
-        <Box component={'nav'} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>             
+      <Box component={'header'}  sx={{ margin: 'auto', padding: '20px 30px', background: 'white' }}>
+        <Box component={'nav'} 
+          sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+        >             
             <Link component={RouterLink} underline="none" color="inherit" to="/">
               <Typography fontSize={{ xs: "20px", md: "35px" }} component="h1">
                 Fournier Cédric
               </Typography> 
             </Link>
-            <div>
+            <Box display={'flex'}>
+              <Link component={RouterLink} 
+                underline="none" 
+                color="inherit" 
+                to="/" 
+                fontSize={{ xs: "15px", md: "20px" }} 
+                marginRight={{ xs: "10px", md: "20px" }} 
+              >
+                Accueil 
+              </Link>
             {user ?
                 <div>
-                    <Link component={RouterLink} underline="none" fontSize={{ xs: "15px", md: "20px" }} color="inherit" marginRight={{ xs: "10px", md: "20px" }} to="/admin">
+                    <Link component={RouterLink} 
+                      underline="none" 
+                      fontSize={{ xs: "15px", md: "20px" }} 
+                      color="inherit" 
+                      marginRight={{ xs: "10px", md: "20px" }} 
+                      to="/admin"
+                      >
                         Admin
                     </Link>
-                    <Link component={RouterLink} underline="none" fontSize={{ xs: "15px", md: "20px" }} color="inherit" onClick={logOut} to="/">
+                    <Link component={RouterLink} 
+                      underline="none" 
+                      fontSize={{ xs: "15px", md: "20px" }} 
+                      color="inherit" 
+                      onClick={logOut} 
+                      to="/"
+                      >
                         Sign Out                    
                     </Link>
                 </div> 
                 :
-                <Link component={RouterLink} underline="none" fontSize={{ xs: "15px", md: "20px" }} color="inherit" to="/Signin">
+                <Link component={RouterLink} 
+                  underline="none" 
+                  fontSize={{ xs: "15px", md: "20px" }} 
+                  color="inherit" 
+                  to="/Signin"
+                  >
                   Sign in
                 </Link> 
             }
-            </div>
+            </Box>
         </Box>
       </Box>
     )

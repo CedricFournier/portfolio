@@ -10,6 +10,7 @@ function Footer() {
         alignItems={'center'}
         bgcolor={'white'}
         textAlign={'center'}
+        marginTop={'10px'}
         >
         <p>Portfolio created with React, Material UI and Firebase</p>
       </Box>
