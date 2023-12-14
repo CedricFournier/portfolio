@@ -16,7 +16,7 @@ function ItemProject(props) {
                 </Typography>
                 <Box component={'img'} sx={{ width: '100%', border: '3px solid' }} src={props.src} alt={props.alt}/>
             </Link>
-            <Box className={'portfolio'} 
+            <Box
                 display={'flex'} 
                 flexDirection={'column'} 
                 gap={'0.5rem'}

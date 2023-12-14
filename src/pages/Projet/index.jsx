@@ -28,19 +28,38 @@ function Projet() {
             sx={{ background: '#F9F1F0' }}
             >
             <Box width={{ xs: '300px', sm: '500px', md: '600px' }} sx={{ background: 'white', borderRadius: '20px', boxShadow: 3, p: '20px' }} >
-                <Typography component={'h2'} fontSize={{ xs: '35px', md: '50px'}} textAlign={'center'} margin={'40px 0'}>
+                <Typography component={'h2'} 
+                    fontSize={{ xs: '35px', md: '50px'}} 
+                    textAlign={'center'} 
+                    margin={'40px 0'}
+                >
                    {listitem.info.title}
                 </Typography>
-                <Typography component={'h3'} fontSize={{ xs: '25px', md: '30px'}} textAlign={'center'} margin={'40px 0 30px'}>
+                <Typography component={'h3'} 
+                    fontSize={{ xs: '25px', md: '30px'}} 
+                    textAlign={'center'} 
+                    margin={'40px 0 30px'}
+                >
                     Description
                 </Typography>
-                <Typography component={'p'} margin={'30px 0 50px'} textAlign={'center'}>
+                <Typography component={'p'} 
+                    margin={'30px 0 50px'} 
+                    textAlign={'center'}
+                >
                     {listitem.info.description}
                 </Typography>
-                <Typography component={'h3'} fontSize={{ xs: '25px', md: '30px'}} textAlign={'center'} margin={'50px 0 30px'}>
+                <Typography component={'h3'} 
+                    fontSize={{ xs: '25px', md: '30px'}} 
+                    textAlign={'center'} 
+                    margin={'50px 0 30px'}
+                >
                     Technologie utilisée
                 </Typography>
-                <Box display={'flex'} justifyContent={'space-evenly'} margin={'30px 0'}>
+                <Box 
+                    display={'flex'} 
+                    justifyContent={'space-evenly'} 
+                    margin={'30px 0'}
+                >
                     { listitem.info.lhtml === true ? 
                         <Box component={'img'} width={{ xs: '25px', sm: '50px' }} src={logohtml} alt="logo de html"/>
                     :
@@ -74,8 +93,13 @@ function Projet() {
                 </Box>
             </Box>
             <Box margin={'60px 0 0'}>
-                <Box component={'img'} width={{ xs: '300px', sm: '500px', md: '600px' }} border={'3px solid'} src={listitem.info.urlimg} alt={listitem.info.title} />
-                <Box className={'portfolio'} 
+                <Box component={'img'} 
+                    width={{ xs: '300px', sm: '500px', md: '600px' }} 
+                    border={'3px solid'} 
+                    src={listitem.info.urlimg} 
+                    alt={listitem.info.title} 
+                />
+                <Box
                     display={'flex'}  
                     gap={'0.5rem'}
                     flexDirection={{ xs:'column', lg: 'row' }}
@@ -83,10 +107,16 @@ function Projet() {
                     fontSize={'1.5rem'}
                     margin={'30px 0'}
                 >
-                    <Button variant="contained" sx={{ width: 300, borderRadius: '16px', background: '#AE7460', color: 'white' }} href={listitem.info.url} target="_blank">
+                    <Button variant="contained" 
+                        sx={{ width: 300, borderRadius: '16px', background: '#AE7460', color: 'white' }} 
+                        href={listitem.info.url} target="_blank"
+                    >
                         Live Demo
                     </Button>
-                    <Button variant="contained" sx={{ width: 300, borderRadius: '16px', background: '#AE7460', color: 'white' }} href={listitem.info.urlgit} target="_blank">
+                    <Button variant="contained" 
+                        sx={{ width: 300, borderRadius: '16px', background: '#AE7460', color: 'white' }} 
+                        href={listitem.info.urlgit} target="_blank"
+                        >
                         Repo Github
                     </Button>
                 </Box>
