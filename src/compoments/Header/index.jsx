@@ -60,14 +60,7 @@ function Header() {
                     </Link>
                 </div> 
                 :
-                <Link component={RouterLink} 
-                  underline="none" 
-                  fontSize={{ xs: "15px", md: "20px" }} 
-                  color="inherit" 
-                  to="/Signin"
-                  >
-                  Sign in
-                </Link> 
+                null
             }
             </Box>
         </Box>
